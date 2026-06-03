@@ -118,6 +118,22 @@
 </section>
 
 
+<!-- ===================== FIGURE 1: TEASER ===================== -->
+<section class="section" style="padding-top:2rem;padding-bottom:1rem">
+  <div class="container is-max-desktop">
+    <figure style="margin:0">
+      <img src="static/images/figures/pakt_figure_1_v4.svg"
+           alt="PAKT schematic: RGB-D image is processed into action and object keypoints which are jointly diffused to produce future keypoint trajectories"
+           style="width:100%;display:block">
+      <figcaption style="margin-top:0.75rem;font-size:0.88rem;color:#555;text-align:justify;line-height:1.4">
+        <strong>Figure 1: PAKT schematic.</strong>
+        We extract action and object keypoints from an RGB-D image and then perform joint policy
+        diffusion on both types of keypoints on a chunk of future time steps.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -135,31 +151,8 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- ===================== FIGURE 1: METHOD OVERVIEW ===================== -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Method Overview</h2>
-    <p class="content has-text-justified">
-      PAKT represents both robot actions and observed objects as keypoints in a shared 3D space, then
-      jointly denoises them with a single diffusion process. This lets predicted actions and predicted
-      object trajectories bidirectionally constrain each other within the action chunk.
-    </p>
-    <figure style="margin:0">
-      <img src="static/images/figures/pakt_figure_1_v4.svg"
-           alt="PAKT schematic: RGB-D image is processed into action and object keypoints which are jointly diffused to produce future keypoint trajectories"
-           loading="lazy"
-           style="width:100%;display:block">
-      <figcaption style="margin-top:0.75rem;font-size:0.88rem;color:#555;text-align:justify;line-height:1.4">
-        <strong>Figure 1: PAKT schematic.</strong>
-        We extract action and object keypoints from an RGB-D image and then perform joint policy
-        diffusion on both types of keypoints on a chunk of future time steps.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
 <!-- ===================== FIGURE 2: KEYPOINT EXTRACTION PIPELINE ===================== -->
-<section class="section hero is-light">
+<section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Keypoint Extraction Pipeline</h2>
     <p class="content has-text-justified">
