@@ -175,9 +175,82 @@
         object-centric reference frame.
       </figcaption>
     </figure>
+
+    <!-- Pipeline videos -->
+    <div style="margin-top:2rem">
+      <p class="content has-text-justified" style="margin-bottom:1rem">
+        Below we show each stage of the extraction pipeline on an example scene:
+        the raw RGB and depth inputs, the merged segmentation masks produced by
+        GroundingDINO&nbsp;+&nbsp;SAM&nbsp;3, the DINOv3 patch features used for
+        keypoint identity, and the final CoTracker3 point tracks over time.
+      </p>
+
+      <!-- Row 1: RGB + Depth -->
+      <div class="columns is-variable is-2" style="margin-bottom:0">
+        <div class="column has-text-centered">
+          <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.4rem">RGB</p>
+          <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+            <source src="static/videos/pipeline/rgb.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column has-text-centered">
+          <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.4rem">Depth</p>
+          <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+            <source src="static/videos/pipeline/depth.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Row 2: Segmentation (centred, half width) -->
+      <div class="columns is-centered" style="margin-bottom:0">
+        <div class="column is-half has-text-centered">
+          <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.4rem">Merged Segmentation</p>
+          <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+            <source src="static/videos/pipeline/merged_segmentation.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Row 3: DINOv3 features + Tracks -->
+      <div class="columns is-variable is-2" style="margin-bottom:0">
+        <div class="column has-text-centered">
+          <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.4rem">DINOv3 Features</p>
+          <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+            <source src="static/videos/pipeline/dinov3_features.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column has-text-centered">
+          <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.4rem">CoTracker3 Tracks</p>
+          <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+            <source src="static/videos/pipeline/tracks.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+
+<!-- ===================== PREDICTED KEYPOINT TRAJECTORIES ===================== -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Predicted Keypoint Trajectories</h2>
+    <p class="content has-text-justified">
+      PAKT jointly denoises action and object keypoint trajectories within a single diffusion process.
+      The video below visualises the predicted 3D point clouds during a ROBOCASA simulation rollout:
+      action keypoints (representing the end-effector and gripper fingertips) are shown alongside the
+      predicted future positions of the object keypoints, illustrating how the policy reasons
+      geometrically about object motion when planning its actions.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-three-quarters has-text-centered">
+        <video autoplay muted loop playsinline style="width:100%;border-radius:6px;background:#000">
+          <source src="static/videos/predicted_pcs/left_cam_pred_pc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== REAL-WORLD VIDEO COMPARISON ===================== -->
 <section class="section">
